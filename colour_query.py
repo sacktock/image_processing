@@ -29,8 +29,14 @@ def colour_query_mouse_callback(event,x,y,flags,param):
 
     # right button sets colour information at click location to white
 
-    elif  event == cv2.EVENT_RBUTTONDOWN:
-        img[y,x] = [255,255,255]
+    elif event == cv2.EVENT_RBUTTONDOWN:
+        # 5x5 pixel neighbourhood is filled blue
+        """for j in range(y-2, y+3):
+            for i in range(x-2,x+3):
+                try:
+                    img[j,i] = [255,0,0]
+                except:
+                    pass"""
 
 
 #####################################################################
