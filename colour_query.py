@@ -19,7 +19,7 @@ import cv2
 # location of the mouse
 
 def colour_query_mouse_callback(event,x,y,flags,param):
-
+    
     # records mouse events at postion (x,y) in the image window
 
     # left button click prints colour information at click location to stdout
@@ -37,6 +37,10 @@ def colour_query_mouse_callback(event,x,y,flags,param):
                     img[j,i] = [255,0,0]
                 except:
                     pass"""
+        #rectangle
+        #start = (x-5,y-5)
+        #end = (x+5, y+5)
+        #img = cv2.rectangle(img, start, end, (255,0,0), 1)
 
 
 #####################################################################
@@ -62,6 +66,9 @@ if not img is None:
 
     cv2.setMouseCallback(windowName,colour_query_mouse_callback);
 
+    # addidtional operations
+    #cvtColor(img,img, CV_BGR2GRAY)
+    
     # set a loop control flag
 
     keep_processing = True;
